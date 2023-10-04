@@ -11,7 +11,7 @@ def getGfwlist():
     res = requests.get(GFWlist_url)
     if res.status_code != 200:
       return
-    f = open(sys.path[0] + '/config/ProxyGFWlist.list',mode='w',encoding='utf-8')
+    f = open(sys.path[0] + '/ProxyGFWlist.list',mode='w',encoding='utf-8')
     f.write(res.text)
     f.close()
   except Exception as e:
@@ -22,7 +22,7 @@ def getBanAD():
     res = requests.get(BanAD_url)
     if res.status_code != 200:
       return
-    f = open(sys.path[0] + '/config/BanAD.list',mode='w',encoding='utf-8')
+    f = open(sys.path[0] + '/BanAD.list',mode='w',encoding='utf-8')
     f.write(res.text)
     f.close()
   except Exception as e:
@@ -33,7 +33,7 @@ def getBanProgramAD():
     res = requests.get(BanProgramAD_url)
     if res.status_code != 200:
       return
-    f = open(sys.path[0] + '/config/BanProgramAD.list',mode='w',encoding='utf-8')
+    f = open(sys.path[0] + '/BanProgramAD.list',mode='w',encoding='utf-8')
     f.write(res.text)
     f.close()
   except Exception as e:
