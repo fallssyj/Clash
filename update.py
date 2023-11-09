@@ -55,6 +55,7 @@ def main():
   getGfwlist()
   getBanAD()
   getBanProgramAD()
+  getOpenAi()
 
 
 if __name__ == '__main__':
