@@ -45,7 +45,7 @@ def getOpenAi():
     res = requests.get(OpenAi_url)
     if res.status_code != 200:
       return
-    f = open(sys.path[0] + '/OpenAi.list.list',mode='w',encoding='utf-8')
+    f = open(sys.path[0] + '/OpenAi.list',mode='w',encoding='utf-8')
     f.write(res.text)
     f.close()
   except Exception as e:
