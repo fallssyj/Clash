@@ -1,5 +1,5 @@
 import requests
-import  sys
+import sys
 import os
 
 
