@@ -1,61 +1,36 @@
 import requests
 import  sys
+import os
 
 
-GFWlist_url = 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list'
-BanAD_url = 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list'
-BanProgramAD_url = 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list'
-OpenAi_url = 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list'
+urls = [
+    'https://raw.githubusercontent.com/dler-io/Rules/refs/heads/main/Clash/Provider/TikTok.yaml',
+    'https://raw.githubusercontent.com/dler-io/Rules/refs/heads/main/Clash/Provider/AI%20Suite.yaml',
+    'https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/refs/heads/main/Rulesets/Clash/Basic/Apple-proxy.yaml',
+    'https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/refs/heads/main/Rulesets/Clash/Basic/Apple-direct.yaml',
+    'https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/refs/heads/main/Rulesets/Clash/Basic/CN.yaml',
+    'https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/refs/heads/main/Rulesets/Clash/Basic/common-ad-keyword.yaml',
+    'https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/refs/heads/main/Rulesets/Clash/Basic/foreign.yaml'
+]
 
-def getGfwlist():
-  try:
-    res = requests.get(GFWlist_url)
-    if res.status_code != 200:
-      return
-    f = open(sys.path[0] + '/ProxyGFWlist.list',mode='w',encoding='utf-8')
-    f.write(res.text)
-    f.close()
-  except Exception as e:
-    print(e)
+def getFile(url):
+    try:
+        res = requests.get(url)
+        if res.status_code != 200:
+            print(f"Failed to retrieve {url}: {res.status_code}")
+            return
+        name = os.path.basename(url).replace('%20', '-') 
+        file_path = os.path.join(os.path.dirname(__file__), name) 
+        with open(file_path, mode='w', encoding='utf-8') as f:
+            f.write(res.text)
+    except Exception as e:
+        print(e)
 
-def getBanAD():
-  try:
-    res = requests.get(BanAD_url)
-    if res.status_code != 200:
-      return
-    f = open(sys.path[0] + '/BanAD.list',mode='w',encoding='utf-8')
-    f.write(res.text)
-    f.close()
-  except Exception as e:
-    print(e)
-
-def getBanProgramAD():
-  try:
-    res = requests.get(BanProgramAD_url)
-    if res.status_code != 200:
-      return
-    f = open(sys.path[0] + '/BanProgramAD.list',mode='w',encoding='utf-8')
-    f.write(res.text)
-    f.close()
-  except Exception as e:
-    print(e)
-
-def getOpenAi():
-  try:
-    res = requests.get(OpenAi_url)
-    if res.status_code != 200:
-      return
-    f = open(sys.path[0] + '/OpenAi.list',mode='w',encoding='utf-8')
-    f.write(res.text)
-    f.close()
-  except Exception as e:
-    print(e)
 
 def main():
-  getGfwlist()
-  getBanAD()
-  getBanProgramAD()
-  getOpenAi()
+
+  for url in urls:
+    getFile(url)
 
 
 if __name__ == '__main__':
