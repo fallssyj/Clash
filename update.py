@@ -9,7 +9,7 @@ urls = [
     'https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/refs/heads/main/Rulesets/Clash/Basic/Apple-proxy.yaml',
     'https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/refs/heads/main/Rulesets/Clash/Basic/Apple-direct.yaml',
     'https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/refs/heads/main/Rulesets/Clash/Basic/CN.yaml',
-    'https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/refs/heads/main/Rulesets/Clash/Basic/common-ad-keyword.yaml',
+    'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/BanAD.yaml',
     'https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/refs/heads/main/Rulesets/Clash/Basic/foreign.yaml'
 ]
 
