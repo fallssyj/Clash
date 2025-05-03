@@ -26,12 +26,15 @@ def getFile(url):
     except Exception as e:
         print(e)
 
-
+    
 def main():
-
   for url in urls:
     getFile(url)
+    
 
 
 if __name__ == '__main__':
   main()
+  yaml_files = [f for f in os.listdir('.') if f.endswith('.yaml')]
+  for yaml in yaml_files:
+    requests.get('https://purge.jsdelivr.net/gh/fallssyj/Clash/' + yaml)
