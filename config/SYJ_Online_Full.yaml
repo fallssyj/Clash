@@ -20,7 +20,7 @@ rule-providers:
     type: http
     behavior: classical
     url: "https://cdn.jsdelivr.net/gh/fallssyj/Clash/Providers/ProxyGFWlist.yaml"
-    path: ./ruleset/Apple-proxy.yaml
+    path: ./ruleset/ProxyGFWlist.yaml
     interval: 3600
 
   ad:
@@ -34,7 +34,7 @@ rule-providers:
     type: http
     behavior: classical
     url: "https://cdn.jsdelivr.net/gh/fallssyj/Clash/Providers/BanCDR.yaml"
-    path: ./ruleset/foreign.yaml
+    path: ./ruleset/BanCDR.yaml
     interval: 3600
 
   my-direct:
@@ -48,7 +48,7 @@ rule-providers:
     type: http
     behavior: classical
     url: "https://cdn.jsdelivr.net/gh/fallssyj/Clash/Providers/AI.yaml"
-    path: ./ruleset/aisuite.yaml
+    path: ./ruleset/ai.yaml
     interval: 3600
 
   steam:
