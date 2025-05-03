@@ -1,20 +1,25 @@
 import requests
 import os
 
-URLS = [
-    'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/BanAD.yaml',
-    'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ProxyGFWlist.yaml',
-    'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/AI.yaml'
-]
-
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROVIDER_DIR = os.path.join(BASE_DIR, 'Providers')
+URL_FILE = os.path.join(BASE_DIR, 'urls.txt')
 
 def ensure_provider_dir():
+    """确保 Providers 目录存在"""
     if not os.path.exists(PROVIDER_DIR):
         os.makedirs(PROVIDER_DIR)
 
+def read_urls_from_file(filepath):
+    """从文本文件读取 URL 列表"""
+    if not os.path.isfile(filepath):
+        print(f"URL file not found: {filepath}")
+        return []
+    with open(filepath, 'r', encoding='utf-8') as f:
+        return [line.strip() for line in f if line.strip()]
+
 def download_file(url):
+    """下载文件并保存到 Providers 目录"""
     try:
         res = requests.get(url)
         res.raise_for_status()
@@ -29,6 +34,7 @@ def download_file(url):
         print(f"Error downloading {url}: {e}")
 
 def purge_jsdelivr_cache(filename):
+    """调用 jsDelivr 清缓存"""
     purge_url = f'https://purge.jsdelivr.net/gh/fallssyj/Clash/Providers/{filename}'
     try:
         res = requests.get(purge_url)
@@ -41,10 +47,15 @@ def purge_jsdelivr_cache(filename):
 
 def main():
     ensure_provider_dir()
-    for url in URLS:
+    urls = read_urls_from_file(URL_FILE)
+
+    if not urls:
+        print("No URLs to process.")
+        return
+
+    for url in urls:
         download_file(url)
 
-    # 遍历 Providers 目录并刷新 jsDelivr 缓存
     yaml_files = [f for f in os.listdir(PROVIDER_DIR) if f.endswith('.yaml')]
     for yaml_file in yaml_files:
         purge_jsdelivr_cache(yaml_file)
