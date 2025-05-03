@@ -60,8 +60,9 @@ rule-providers:
 
 #设置规则标志位
 rules:
-  - RULE-SET,proxy,🚀 节点选择
+  
   - RULE-SET,ai,💬 OpenAi
+  - RULE-SET,proxy,🚀 节点选择
 
   - RULE-SET,my-direct,DIRECT
   - RULE-SET,steam,DIRECT
