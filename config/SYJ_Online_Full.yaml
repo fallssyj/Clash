@@ -40,8 +40,8 @@ rule-providers:
   ad-keyword:
     type: http
     behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/fallssyj/Clash/common-ad-keyword.yaml"
-    path: ./ruleset/common-ad-keyword.yaml
+    url: "https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Providers/BanAD.yaml"
+    path: ./ruleset/BanAD.yaml
     interval: 3600
 
   foreign:
