@@ -10,7 +10,8 @@ urls = [
     'https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/refs/heads/main/Rulesets/Clash/Basic/Apple-direct.yaml',
     'https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/refs/heads/main/Rulesets/Clash/Basic/CN.yaml',
     'https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/refs/heads/main/Rulesets/Clash/Basic/common-ad-keyword.yaml',
-    'https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/refs/heads/main/Rulesets/Clash/Basic/foreign.yaml'
+    'https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/refs/heads/main/Rulesets/Clash/Basic/foreign.yaml',
+    'https://raw.githubusercontent.com/dler-io/Rules/refs/heads/main/Clash/Provider/Steam.yaml'
 ]
 
 def getFile(url):
