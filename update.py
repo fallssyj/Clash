@@ -20,7 +20,7 @@ def getFile(url):
             print(f"Failed to retrieve {url}: {res.status_code}")
             return
         name = os.path.basename(url).replace('%20', '-') 
-        file_path = os.path.join(os.path.dirname(__file__), name) 
+        file_path = os.path.join(os.path.dirname(__file__),'Providers', name) 
         with open(file_path, mode='w', encoding='utf-8') as f:
             f.write(res.text)
     except Exception as e:
@@ -35,6 +35,7 @@ def main():
 
 if __name__ == '__main__':
   main()
-  yaml_files = [f for f in os.listdir('.') if f.endswith('.yaml')]
+  provider_dir = os.path.join(os.path.dirname(__file__), 'Providers')
+  yaml_files = [f for f in os.listdir(provider_dir) if f.endswith('.yaml')]
   for yaml in yaml_files:
-    requests.get('https://purge.jsdelivr.net/gh/fallssyj/Clash/' + yaml)
+    requests.get('https://purge.jsdelivr.net/gh/fallssyj/Clash/Providers/' + yaml)
