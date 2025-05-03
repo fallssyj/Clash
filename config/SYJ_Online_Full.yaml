@@ -21,7 +21,7 @@ rule-providers:
     behavior: classical
     url: "https://cdn.jsdelivr.net/gh/fallssyj/Clash/Apple-proxy.yaml"
     path: ./ruleset/Apple-proxy.yaml
-    interval: 3600 # 每小时更新一次规则
+    interval: 3600
 
   apple-direct:
     type: http
@@ -65,18 +65,25 @@ rule-providers:
     path: ./ruleset/aisuite.yaml
     interval: 3600
 
+  steam:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/fallssyj/Clash/Steam.yaml"
+    path: ./ruleset/steam.yaml
+    interval: 3600
 
-
-# 最终规则（按顺序匹配，匹配到就停止）
+#设置规则标志位
 rules:
-
   - RULE-SET,apple-proxy,🚀 节点选择 # 苹果服务走代理
+  - RULE-SET,foreign,🚀 节点选择 # 国外网站走代理
+  - RULE-SET,aisuite,💬 OpenAi # AI-Suite走代理
+
+  - RULE-SET,direct,DIRECT # 直连规则走直连
   - RULE-SET,apple-direct,DIRECT # 苹果国内服务走直连
   - RULE-SET,cn,DIRECT # 中国网站走直连
+  - RULE-SET,steam,DIRECT # Steam走直连
+
   - RULE-SET,ad-keyword,REJECT # 广告关键词拦截
-  - RULE-SET,foreign,🚀 节点选择 # 国外网站走代理
-  - RULE-SET,direct,DIRECT # 直连规则走直连
-  - RULE-SET,aisuite,💬 OpenAi # AI-Suite走代理
 
   - GEOIP,CN,DIRECT # 中国IP直连
   - MATCH,🐟 漏网之鱼 # 其他所有请求走代理
