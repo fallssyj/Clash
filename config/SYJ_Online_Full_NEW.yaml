@@ -61,8 +61,8 @@ rule-providers:
 #设置规则标志位
 rules:
   
-  - RULE-SET,ai,💬 OpenAi
-  - RULE-SET,proxy,🚀 节点选择
+  - RULE-SET,ai,OpenAi
+  - RULE-SET,proxy,节点选择
 
   - RULE-SET,my-direct,DIRECT
   - RULE-SET,steam,DIRECT
@@ -71,4 +71,4 @@ rules:
   - RULE-SET,ban-cdr,REJECT
 
   - GEOIP,CN,DIRECT
-  - MATCH,🐟 漏网之鱼
+  - MATCH,漏网之鱼
