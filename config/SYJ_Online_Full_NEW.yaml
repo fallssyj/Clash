@@ -1,0 +1,74 @@
+
+#设置分组标志位
+custom_proxy_group:
+  - 节点选择`select`[]自动选择`[]香港节点`[]台湾节点`[]狮城节点`[]日本节点`[]美国节点`[]韩国节点`[]手动切换`[]DIRECT
+  - 手动切换`select`.*
+  - 自动选择`url-test`.*`https://www.gstatic.com/generate_204`300,,50
+  - OpenAi`select`.*
+  - 漏网之鱼`select`[]节点选择`[]自动选择`[]DIRECT
+  - 香港节点`url-test`(港|HK|hk|Hong Kong|HongKong|hongkong)`https://www.gstatic.com/generate_204`300,,50
+  - 日本节点`url-test`(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan)`https://www.gstatic.com/generate_204`300,,50
+  - 美国节点`url-test`(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)`https://www.gstatic.com/generate_204`300,,150
+  - 台湾节点`url-test`(台|新北|彰化|TW|Taiwan)`https://www.gstatic.com/generate_204`300,,50
+  - 狮城节点`url-test`(新加坡|坡|狮城|SG|Singapore)`https://www.gstatic.com/generate_204`300,,50
+  - 韩国节点`url-test`(KR|Korea|KOR|首尔|韩|韓)`https://www.gstatic.com/generate_204`300,,50
+
+
+#设置规则组标志位
+rule-providers:
+  proxy:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/fallssyj/Clash/Providers/ProxyGFWlist.yaml"
+    path: ./ruleset/ProxyGFWlist.yaml
+    interval: 3600
+
+  ad:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/fallssyj/Clash/Providers/BanAD.yaml"
+    path: ./ruleset/BanAD.yaml
+    interval: 3600
+
+  ban-cdr:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/fallssyj/Clash/Providers/BanCDR.yaml"
+    path: ./ruleset/BanCDR.yaml
+    interval: 3600
+
+  my-direct:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/fallssyj/Clash/Providers/Direct.yaml"
+    path: ./ruleset/direct.yaml
+    interval: 3600
+
+  ai:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/fallssyj/Clash/Providers/AI.yaml"
+    path: ./ruleset/ai.yaml
+    interval: 3600
+
+  steam:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/fallssyj/Clash/Providers/Steam.yaml"
+    path: ./ruleset/steam.yaml
+    interval: 3600
+
+#设置规则标志位
+rules:
+  
+  - RULE-SET,ai,💬 OpenAi
+  - RULE-SET,proxy,🚀 节点选择
+
+  - RULE-SET,my-direct,DIRECT
+  - RULE-SET,steam,DIRECT
+
+  - RULE-SET,ad,REJECT
+  - RULE-SET,ban-cdr,REJECT
+
+  - GEOIP,CN,DIRECT
+  - MATCH,🐟 漏网之鱼
