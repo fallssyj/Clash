@@ -63,14 +63,14 @@ rule-providers:
     type: http
     behavior: classical
     url: "https://cdn.jsdelivr.net/gh/fallssyj/Clash/Providers/Bilibili.yaml"
-    path: ./ruleset/steam.yaml
+    path: ./ruleset/Bilibili.yaml
     interval: 3600
   
   BilibiliHMT:
     type: http
     behavior: classical
     url: "https://cdn.jsdelivr.net/gh/fallssyj/Clash/Providers/BilibiliHMT.yaml"
-    path: ./ruleset/steam.yaml
+    path: ./ruleset/BilibiliHMT.yaml
     interval: 3600
 
 #设置规则标志位
