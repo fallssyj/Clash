@@ -5,6 +5,7 @@ custom_proxy_group:
   - 🚀 手动切换`select`.*
   - ♻️ 自动选择`url-test`.*`https://www.gstatic.com/generate_204`300,,50
   - 💬 OpenAi`select`.*
+  - 📺 哔哩哔哩`select`[]DIRECT`[]🇨🇳 台湾节点`[]🇭🇰 香港节点
   - 🐟 漏网之鱼`select`[]🚀 节点选择`[]♻️ 自动选择`[]DIRECT
   - 🇭🇰 香港节点`url-test`(港|HK|hk|Hong Kong|HongKong|hongkong)`https://www.gstatic.com/generate_204`300,,50
   - 🇯🇵 日本节点`url-test`(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan)`https://www.gstatic.com/generate_204`300,,50
@@ -57,12 +58,28 @@ rule-providers:
     url: "https://cdn.jsdelivr.net/gh/fallssyj/Clash/Providers/Steam.yaml"
     path: ./ruleset/steam.yaml
     interval: 3600
+  
+  Bilibili:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/fallssyj/Clash/Providers/Bilibili.yaml"
+    path: ./ruleset/steam.yaml
+    interval: 3600
+  
+  BilibiliHMT:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/fallssyj/Clash/Providers/BilibiliHMT.yaml"
+    path: ./ruleset/steam.yaml
+    interval: 3600
 
 #设置规则标志位
 rules:
   
   - RULE-SET,ai,💬 OpenAi
   - RULE-SET,proxy,🚀 节点选择
+  - RULE-SET,Bilibili,📺 哔哩哔哩
+  - RULE-SET,BilibiliHMT,📺 哔哩哔哩
 
   - RULE-SET,my-direct,DIRECT
   - RULE-SET,steam,DIRECT
