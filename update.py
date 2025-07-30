@@ -56,9 +56,9 @@ def main():
     for url in urls:
         download_file(url)
 
-    yaml_files = [f for f in os.listdir(PROVIDER_DIR) if f.endswith('.yaml')]
-    for yaml_file in yaml_files:
-        purge_jsdelivr_cache(yaml_file)
+    files = [f for f in os.listdir(PROVIDER_DIR)]
+    for file in files:
+        purge_jsdelivr_cache(file)
 
 if __name__ == '__main__':
     main()
