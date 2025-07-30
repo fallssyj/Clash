@@ -4,6 +4,8 @@ https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/BanAD.list
 https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/Bilibili.list
 https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/BilibiliHMT.list
 https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/ChinaIp.list
+https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/DisneyPlus.list
+https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/Facebook.list
 https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/Github.list
 https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/Google.list
 https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/GoogleCN.list
@@ -27,3 +29,9 @@ https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/YouTube.l
 https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/YouTubeMusic.list
 https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/OneDrive.list
 https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/ProxyGFWlist.list
+https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/HBO.list
+https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/HBO_GO_HKG.list
+https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/Amazon.list
+https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/AmazonIp.list
+https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/Crypto.list
+https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/Developer.list
