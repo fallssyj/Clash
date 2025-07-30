@@ -16,7 +16,7 @@ https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/Netflix.l
 https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/NetflixIP.list
 https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/OpenAi.list
 https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/Porn.list
-https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/Pornhub.list
+https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/Pornhub.list
 https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/Spotify.list
 https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/Steam.list
 https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/SteamCN.list
