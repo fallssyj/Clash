@@ -51,10 +51,10 @@ def main():
 
     if not urls:
         print("No URLs to process.")
-        return
-
-    for url in urls:
-        download_file(url)
+    else:
+        for url in urls:
+            download_file(url)
+    
 
     files = [f for f in os.listdir(PROVIDER_DIR)]
     for file in files:
