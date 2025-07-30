@@ -1,13 +1,12 @@
-payload:
-  # 屏蔽CDR网络验证 不会再收到警告
+# 屏蔽CDR网络验证 不会再收到警告
   
-  - DOMAIN,apps.corel.com
-  - DOMAIN,mc.corel.com
-  - DOMAIN,origin-mc.corel.com
-  - DOMAIN,iws.corel.com
-  - DOMAIN,ipm.corel.com
-  - DOMAIN,sws.corel.com
-  - DOMAIN,dam.corel.com
-  - DOMAIN,compute-1.amazonaws.com
-  - DOMAIN,dev1.ipm.corel.public.corel.net
-  - DOMAIN,edgesuite.net
+DOMAIN,apps.corel.com
+DOMAIN,mc.corel.com
+DOMAIN,origin-mc.corel.com
+DOMAIN,iws.corel.com
+DOMAIN,ipm.corel.com
+DOMAIN,sws.corel.com
+DOMAIN,dam.corel.com
+DOMAIN,compute-1.amazonaws.com
+DOMAIN,dev1.ipm.corel.public.corel.net
+DOMAIN,edgesuite.net
