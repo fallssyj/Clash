@@ -4,7 +4,7 @@ def generate_clash_config(
     providers_dir='Providers',
     base_config='config.yaml',
     output_filename='clash.yaml',
-    uri='https://cdn.jsdelivr.net/gh/fallssyj/Clash/Providers/'
+    uri='https://gh-proxy.com/github.com/fallssyj/Clash/raw/refs/heads/main/Providers/'
 ):
     # 检查Providers目录是否存在
     if not os.path.isdir(providers_dir):

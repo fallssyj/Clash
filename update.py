@@ -40,26 +40,11 @@ def download_file(url: str, timeout: int = 15) -> str:
         print(f"[✗] 下载失败: {url}\n    错误: {e}")
         return ""
 
-def purge_jsdelivr_cache(relative_path: str, timeout: int = 10):
-    purge_url = f'https://purge.jsdelivr.net/gh/{REPO_PREFIX}/{relative_path}'
-    try:
-        res = requests.get(purge_url, timeout=timeout)
-        if res.status_code == 200:
-            print(f"[✓] 缓存刷新成功: {relative_path}")
-        else:
-            print(f"[✗] 缓存刷新失败: {relative_path} (状态码: {res.status_code})")
-    except requests.RequestException as e:
-        print(f"[✗] 缓存刷新异常: {relative_path}\n    错误: {e}")
-
 def download_all_files(urls: List[str]):
     with ThreadPoolExecutor(max_workers=8) as executor:
         futures = {executor.submit(download_file, url): url for url in urls}
         for future in as_completed(futures):
             future.result()
-
-def purge_all_cache(paths: List[str]):
-    with ThreadPoolExecutor(max_workers=8) as executor:
-        list(executor.map(purge_jsdelivr_cache, paths))
 
 def main():
     ensure_dir(PROVIDER_DIR)
@@ -71,19 +56,6 @@ def main():
         download_all_files(urls)
     else:
         print("[!] 没有可下载的 URL。")
-
-    print("\n=== 刷新 Providers 缓存 ===")
-    provider_files = [f.name for f in PROVIDER_DIR.glob('*') if f.is_file()]
-
-    print("\n=== 刷新 assets/icons 缓存 ===")
-    icon_files = [f.relative_to(BASE_DIR).as_posix() for f in ICONS_DIR.glob('*') if f.is_file()]
-
-    all_to_purge = [f'Providers/{name}' for name in provider_files] + icon_files
-
-    if all_to_purge:
-        purge_all_cache(all_to_purge)
-    else:
-        print("[!] 没有需要刷新的文件。")
 
 if __name__ == '__main__':
     main()
