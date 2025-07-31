@@ -1,0 +1,89 @@
+rules:
+
+  # 拒绝
+  - RULE-SET,BanAD,Block
+  - RULE-SET,BanCDR,Block
+
+  # bilibili
+  - RULE-SET,Bilibili,bilibili
+  - RULE-SET,BilibiliHMT,bilibili
+
+
+  # 直连
+  - RULE-SET,ChinaIp,国内
+  - RULE-SET,MyDirect,国内
+  - RULE-SET,Apple,Apple
+
+  # 微软
+  - RULE-SET,OneDrive,OneDrive
+  - RULE-SET,Microsoft,Microsoft
+
+  # 国外DNS解析服务器
+  - RULE-SET,FallBack_DNS,国外
+
+  # AI
+  - RULE-SET,AI,ChatGPT
+  - RULE-SET,OpenAi,ChatGPT
+
+  # GitHub
+  - RULE-SET,Github,GitHub
+  
+  # Google
+  - RULE-SET,YouTube,YouTube
+  - RULE-SET,YouTubeMusic,YouTube
+
+  - RULE-SET,Google,Google
+  - RULE-SET,GoogleCN,Google
+  - RULE-SET,GoogleCNProxyIP,Google
+  - RULE-SET,GoogleEarth,Google
+  - RULE-SET,GoogleFCM,Google
+
+  # Steam
+  - RULE-SET,Steam,Steam
+  - RULE-SET,SteamCN,Steam
+  - RULE-SET,SteamIP,Steam
+  - RULE-SET,SteamRegionCheck,Steam
+
+  # Game
+  - RULE-SET,Epic,Game
+  - RULE-SET,EA,Game
+  - RULE-SET,Blizzard,Game
+  - RULE-SET,UBI,Game
+  - RULE-SET,PlayStation,Game
+  - RULE-SET,Nintend,Game
+
+  # APP
+  - RULE-SET,Crypto,Crypto
+  - RULE-SET,Developer,Developer
+  - RULE-SET,DisneyPlus,Disney
+  - RULE-SET,Facebook,Facebook
+  - RULE-SET,Telegram,Telegram
+  - RULE-SET,TikTok,TikTok
+  - RULE-SET,Twitter,Twitter(X)
+  - RULE-SET,Whatsapp,WhatsApp
+
+  - RULE-SET,HBO,HBO
+  - RULE-SET,HBO_GO_HKG,HBO
+  - RULE-SET,Netflix,Netflix
+  - RULE-SET,NetflixIP,Netflix
+  - RULE-SET,Spotify,Spotify
+  
+  - RULE-SET,Amazon,国外
+  - RULE-SET,AmazonIp,国外
+
+  - RULE-SET,Porn,国外
+  - RULE-SET,Pornhub,国外
+
+  # GFW
+  - RULE-SET,ProxyGFWlist,国外
+  - RULE-SET,TEST,Test
+  
+  - GEOIP,CN,直连
+  - MATCH,漏网之鱼
+
+rule-anchor:
+  ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
+  domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
+  class: &class {type: http, interval: 86400, behavior: classical, format: text}
+
+rule-providers:
