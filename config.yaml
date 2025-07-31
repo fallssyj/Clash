@@ -76,7 +76,7 @@ rules:
 
   # GFW
   - RULE-SET,ProxyGFWlist,国外
-  - RULE-SET,TEST,Test
+  - RULE-SET,Check,Test
   
   - GEOIP,CN,直连
   - MATCH,漏网之鱼
