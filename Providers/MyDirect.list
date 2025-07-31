@@ -16,3 +16,4 @@ IP-CIDR,10.1.1.0/24
 
 DOMAIN-KEYWORD,opendoor
 DOMAIN-KEYWORD,chatboxai
+DOMAIN-KEYWORD,gh-proxy
