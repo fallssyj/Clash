@@ -35,3 +35,4 @@ https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/Amazon.li
 https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/AmazonIp.list
 https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/Crypto.list
 https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/Developer.list
+https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/Microsoft.list
