@@ -26,4 +26,4 @@ with open(output_filename, 'w', encoding='utf-8') as f:
     # 写入rule-providers部分
     for filename in file_list:
         name_without_extension = os.path.splitext(filename)[0]
-        f.write(f'  {name_without_extension} / Domain: {{<<: *class, url: \"{uri}{filename}\"}}\n')
+        f.write(f'  {name_without_extension}: {{<<: *class, url: \"{uri}{filename}\"}}\n')

@@ -50,7 +50,7 @@ rules:
   - RULE-SET,Blizzard,Game
   - RULE-SET,UBI,Game
   - RULE-SET,PlayStation,Game
-  - RULE-SET,Nintend,Game
+  - RULE-SET,Nintendo,Game
 
   # APP
   - RULE-SET,Crypto,Crypto
