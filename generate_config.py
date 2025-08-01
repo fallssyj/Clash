@@ -34,7 +34,6 @@ def generate_clash_config(
         with open(output_filename, 'w', encoding='utf-8') as f:
             # 先写入原有配置
             f.write(existing_content)
-            f.write('\nrule-providers:\n')
             # 写入rule-providers部分
             for filename in files:
                 name_without_extension = os.path.splitext(filename)[0]
